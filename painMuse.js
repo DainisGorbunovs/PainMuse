@@ -31,7 +31,8 @@ udpPort.on("message", function (oscBundle) {
 	    		{
 	    			// post a message
 		    		logAction("Posting message to support");
-		    		postCode("Need help");
+		    		//postCode("Need help");
+            postCode("Need help");
 		    		logAction("Sent a message to support");
 	    		}
 	    		active = true;
@@ -75,6 +76,7 @@ function postCode(codestring) {
   // post the data
   post_req.write(post_data);
   post_req.end();
+  udpPort.close();
 }
 
 function logAction(action)
